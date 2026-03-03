@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-export default function CheckoutSuccessPage({ searchParams, }: { searchParams: {orderId?: string} }) {
-    const orderId = searchParams.orderId ?? '_';
+export default async function CheckoutSuccessPage({ searchParams, }: { searchParams: Promise<{orderId?: string}> }) {
+    const {orderId = '_'} = await searchParams;
 
     return (
         <main className="mx-auto max-w-xl px-4 py-16 text-center">
