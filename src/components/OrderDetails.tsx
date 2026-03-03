@@ -71,7 +71,7 @@ export default function OrderDetails({orderId}: { orderId: string}) {
                 <h1 className="text-xl font-semibold">Order not found</h1>
                 <p className="mt-2 text-sm text-gray-600">This order doesn't exist in local storage.</p>
                 <Link
-                    href={/app/orders}
+                    href={"/app/orders"}
                     className="mt-4 inline-flex rounded-xl bg-black px-4 py-2 text-sm font-medium text-white"
                 >
                     Back to orders
