@@ -23,7 +23,6 @@ export default function ProductCard({ product }: { product: Product }) {
     stock,
     category,
     tags,
-    image,
   } = product;
   const discount = calcDiscountPercent(price, compareAtPrice);
 
@@ -33,7 +32,7 @@ export default function ProductCard({ product }: { product: Product }) {
         <div className="relative">
           <div className="relative aspect-square overflow-hidden bg-stone-100">
             <Image
-              src={image}
+              src={product.image}
               alt={title}
               fill
               className="object-cover transition duration-500 ease-out group-hover:scale-[1.04]"

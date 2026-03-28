@@ -70,8 +70,8 @@ export default function OrderDetails({ orderId }: { orderId: string }) {
       <div className="rounded-2xl border border-stone-200 bg-white p-8 shadow-sm">
         <h1 className="text-xl font-bold text-stone-900">Order not found</h1>
         <p className="mt-2 text-sm text-stone-600">
-          This ID is not in your browser storage. It may have been cleared or
-          never placed on this device.
+          No order with this ID was found in browser storage. It may have been
+          cleared or the order was placed on another device.
         </p>
         <Link
           href="/app/orders"

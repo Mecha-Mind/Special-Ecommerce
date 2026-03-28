@@ -24,7 +24,7 @@ const ToastContext = createContext<TostCtx | null>(null);
 
 export function ToastProvider({children}: {children: React.ReactNode}) {
     const [toasts, setToasts] = useState<Tost[]>([]);
-    const timerRef = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
+    const timerRef = useRef<Record<string, number>>({});
 
     const dismiss = useCallback((id: string) => {
         // clear timer if it exists
@@ -51,7 +51,7 @@ export function ToastProvider({children}: {children: React.ReactNode}) {
         const timerId = setTimeout(() => {
             dismiss(id);
         }, 3000);
-        timerRef.current[id] = timerId;
+        timerRef.current[id] = timerId as unknown as number;
     }, [dismiss]);
 
     const value = useMemo(() => ({push, dismiss, clear}), [toasts, dismiss, clear]);

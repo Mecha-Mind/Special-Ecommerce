@@ -5,6 +5,19 @@ import { useShopUi } from "@/context/shop-ui-context";
 import type { Product } from "@/data/products";
 import type { SortKey } from "@/context/shop-ui-context";
 
+const SORT_OPTIONS: SortKey[] = [
+  "newest",
+  "rating-desc",
+  "price-asc",
+  "price-desc",
+  "featured",
+];
+
+function sortFromSelectValue(value: string): SortKey {
+  const found = SORT_OPTIONS.find((k) => k === value);
+  return found ?? "newest";
+}
+
 const selectClass =
   "w-full cursor-pointer rounded-xl border border-stone-200 bg-white px-3 py-2.5 text-sm font-medium text-stone-900 shadow-sm outline-none transition hover:border-stone-300 focus:border-amber-900/35 focus:ring-2 focus:ring-amber-600/20";
 
@@ -58,7 +71,7 @@ export default function FiltersBar({ products }: { products: Product[] }) {
           name="sortSelect"
           id="sortSelect"
           value={sort}
-          onChange={(e) => setSort(e.target.value as SortKey)}
+          onChange={(e) => setSort(sortFromSelectValue(e.target.value))}
           className={selectClass}
         >
           <option value="newest">Newest</option>
