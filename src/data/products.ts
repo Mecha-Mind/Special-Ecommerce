@@ -22,8 +22,7 @@ export type Product = {
   createdAt: string;
 };
 
-const u = (id: string, w = 900) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
+const u = (id: string, w = 900) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
 
 export const products: Product[] = [
   {
@@ -94,29 +93,29 @@ export const products: Product[] = [
   },
   {
     id: "p-003",
-    title: "Classic Leather Derbies",
+    title: "Leather suit jacket",
     description:
-      "Classic leather derby for the office and smart-casual occasions.",
+      "Leather suit jacket for the office and smart-casual occasions.",
     price: 2499,
     compareAtPrice: 2899,
-    category: "shoes",
+    category: "clothing",
     rating: 4.5,
     reviewCount: 94,
     stock: 8,
-    tags: ["Leather", "Formal", "Men's"],
-    image: u("photo-1533869829740-14becdb6e04a"),
+    tags: ["Leather", "Formal", "Men"],
+    image: '/products/2g.png',
     colors: [
       {
-        id: "brown",
-        name: "Brown",
-        hex: "#5c4033",
-        image: u("photo-1616400638337-906a5f60a9f0"),
+        id: "gray",
+        name: "Gray",
+        hex: "#6b7280",
+        image: '/products/2g.png',
       },
       {
-        id: "black",
-        name: "Black",
-        hex: "#171717",
-        image: u("photo-1533869829740-14becdb6e04a"),
+        id: "green",
+        name: "Green",
+        hex: "#739c82",
+        image: '/products/2gr.png',
       },
     ],
     sizes: ["41", "42", "43", "44"],
@@ -196,27 +195,33 @@ export const products: Product[] = [
   },
   {
     id: "p-006",
-    title: "Slim Chino Pants",
-    description: "Slim chino with a neat silhouette. Pairs with a shirt or tee.",
+    title: "Slim Chino jacket",
+    description: "Slim chino jacket with a neat silhouette. Pairs with a shirt or tee.",
     price: 749,
     category: "clothing",
     rating: 4.4,
     reviewCount: 156,
     stock: 18,
-    tags: ["Chino", "Work", "Fall"],
-    image: u("photo-1473966968600-fa801bee869a"),
+    tags: ["Chino jacket", "Work", "Fall"],
+    image: '/products/5bl.png',
     colors: [
       {
-        id: "khaki",
-        name: "Khaki",
-        hex: "#b8a88c",
-        image: u("photo-1473966968600-fa801bee869a"),
+        id: "black",
+        name: "Black",
+        hex: "#18181b",
+        image: '/products/5bl.png',
       },
       {
-        id: "navy",
-        name: "Navy",
-        hex: "#1e3a5f",
-        image: u("photo-1624378515195-6dbdb23fcf8d"),
+        id: "orange",
+        name: "Orange",
+        hex: "#f97316",
+        image: '/products/5o.png',
+      },
+      {
+        id: "red",
+        name: "Red",
+        hex: "#ef4444",
+        image: '/products/5r.png',
       },
     ],
     sizes: ["30", "32", "34", "36"],
@@ -253,31 +258,37 @@ export const products: Product[] = [
   },
   {
     id: "p-008",
-    title: "Crew Socks (3-pack)",
+    title: "T-Shirt",
     description:
-      "Cotton blend crew socks—comfortable for daily wear.",
+      "Cotton blend t-shirt—comfortable for daily wear.",
     price: 199,
     category: "accessories",
     rating: 4.3,
     reviewCount: 412,
     stock: 60,
-    tags: ["Socks", "Cotton", "Pack"],
-    image: u("photo-1586350977771-b3b0abd50cee"),
+    tags: ["T-Shirt", "Cotton", "Pack"],
+    image: '/products/1g.png',
     colors: [
       {
-        id: "white",
-        name: "White",
-        hex: "#f4f4f5",
-        image: u("photo-1586350977771-b3b0abd50cee"),
+        id: "gray",
+        name: "Gray",
+        hex: "#6b7280",
+        image: '/products/1g.png',
       },
       {
-        id: "black",
-        name: "Black",
-        hex: "#27272a",
-        image: u("photo-1642615835477-d31d6736e23d"),
+        id: "green",
+        name: "Green",
+        hex: "#739c82",
+        image: '/products/1gr.png',
+      },
+      {
+        id: "purple",
+        name: "Purple",
+        hex: "#7f64bc",
+        image: '/products/1p.png',
       },
     ],
-    sizes: ["39-42", "43-46"],
+    sizes: ["S", "M", "L", "XL"],
     createdAt: "2025-11-10",
   },
   {
