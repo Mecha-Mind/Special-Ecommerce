@@ -35,7 +35,7 @@ type CartContextType = {
 
 const CartContext = createContext<CartContextType | null>(null);
 
-const STORAGE_KEY = 'mechastore-cart-v1';
+const STORAGE_KEY = "darlstore-cart-v1";
 
 export function CartProvider({children}: {children:React.ReactNode}) {
     const [items, setItems] = useState<CartItem[]>([]);
@@ -50,8 +50,12 @@ export function CartProvider({children}: {children:React.ReactNode}) {
                 const parsed= JSON.parse(raw);
                 if (Array.isArray(parsed)) setItems(parsed)
             }
-        } catch {}
+        } catch {
+
+        } finally {
             setHydrated(true);
+        }
+
     },[]);
 
     // persist cart to localStorage (after hydration only)
@@ -120,17 +124,8 @@ export function CartProvider({children}: {children:React.ReactNode}) {
     );
 
     const value = useMemo(
-        () => ({
-            items,
-            addItem,
-            removeItem,
-            increase,
-            decrease,
-            clear,
-            totalItems,
-            totalPrice,
-        }),
-         [items, totalItems, totalPrice]);
+        () => ({ items, addItem, removeItem, increase, decrease, clear, makeKey, getQuantity, canAddItem, totalItems, totalPrice }),
+        [items, addItem, removeItem, increase, decrease, clear, makeKey, getQuantity, canAddItem, totalItems, totalPrice]);
     return <CartContext.Provider value={value}>{children}</CartContext.Provider>
 
 }

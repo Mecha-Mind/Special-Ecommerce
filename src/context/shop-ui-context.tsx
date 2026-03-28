@@ -2,16 +2,16 @@
 
 import React, {createContext, useContext, useMemo, useState} from "react";
 
-type SortKey = 'featured' | 'price-asc' | 'price-desc' | 'rating-desc' | 'newest';
+export type SortKey = 'featured' | 'price-asc' | 'price-desc' | 'rating-desc' | 'newest';
 
 type ShopUiState = {
     searchText: string;
     setSearchText: (v:string) => void;
-    category: string; // all | 'phones' | etc....
+    category: string; // all | shoes | clothing | accessories
     setCategory: (v:string) => void;
 
     sort: SortKey;
-    setSort: (v:string) => void;
+    setSort: (v: SortKey) => void;
 
     minPrice: number;
     maxPrice: number;
@@ -24,7 +24,7 @@ const ShopUiContext = createContext<ShopUiState | null>(null);
 export function ShopUiProvider({children}: {children:React.ReactNode}) {
     const [searchText, setSearchText] = useState('');
     const [category, setCategory] = useState('all');
-    const [sort, setSort] = useState<SortKey>('featured');
+    const [sort, setSort] = useState<SortKey>('newest');
     const [minPrice, setMinPrice] = useState(0);
     const [maxPrice, setMaxPrice] = useState(999999);
 

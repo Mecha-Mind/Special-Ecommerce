@@ -24,7 +24,7 @@ const ToastContext = createContext<TostCtx | null>(null);
 
 export function ToastProvider({children}: {children: React.ReactNode}) {
     const [toasts, setToasts] = useState<Tost[]>([]);
-    const timerRef = useRef<Record<string, number>>({});
+    const timerRef = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
 
     const dismiss = useCallback((id: string) => {
         // clear timer if it exists

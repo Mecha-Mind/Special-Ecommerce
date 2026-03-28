@@ -27,7 +27,7 @@ export default async function ProductDetailsPage ({params} : PageProps) {
                 <span className='mx-2'>/</span>
                 <span className='text-gray-900'>{product.title}</span>
             </nav>
-            <ProductOptions product={product}/>
+            <ProductOptions key={product.id} product={product}/>
         </main>
     )
 }
